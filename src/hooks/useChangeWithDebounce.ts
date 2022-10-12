@@ -1,15 +1,16 @@
 import {
   ChangeEvent,
   ChangeEventHandler,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
 import { debounce } from "@material-ui/core";
-import {TOnChange} from "../utils/types";
+import { TOnChange } from "../utils/types";
 
-export default (
+export const useChangeWithDebounce = (
   originValue: string,
   originOnChange: TOnChange,
   debounceMsTime: number
@@ -32,14 +33,13 @@ export default (
     [debounceMsTime]
   );
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const newTextValue = e?.target?.value;
-
     setValue(newTextValue);
     valueRef.current = newTextValue;
 
     onChangeWithDebounce(e, originOnChange);
-  };
+  }, [originOnChange, valueRef]);
 
   return [value, onChange];
 };
