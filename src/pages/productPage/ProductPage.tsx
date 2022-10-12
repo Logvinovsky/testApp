@@ -18,7 +18,7 @@ const ProductsWrapper = styled.div`
 const ProductPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [productDesription, setProductDescription] = useState<string>("");
+  const [productDescription, setProductDescription] = useState<string>("");
 
   const filteredProducts = products.filter(
     (product: IProduct) =>
@@ -55,7 +55,7 @@ const ProductPage = () => {
 
       <ProductModal
         isOpen={modalIsOpen}
-        description={productDesription}
+        description={productDescription}
         onClose={closeModal}
       />
     </Wrapper>

@@ -1,13 +1,13 @@
-import React, { FC, MouseEvent } from "react";
+import React, {Dispatch, FC, MouseEvent, SetStateAction} from "react";
 import styled from "styled-components";
 
 interface IProductProps {
   id: number;
   name: string;
   sku: string;
-  openModal: any
-  setProductDescription: any
-  description: string
+  openModal: () => void;
+  setProductDescription: Dispatch<SetStateAction<string>>;
+  description: string;
 }
 
 const ProductWrapper = styled.div`
@@ -26,11 +26,17 @@ const Title = styled.div`
 `;
 const SkuCode = styled.div``;
 
-const Product: FC<IProductProps> = ({ id, name, sku, openModal, setProductDescription, description }) => {
-
+const Product: FC<IProductProps> = ({
+  id,
+  name,
+  sku,
+  openModal,
+  setProductDescription,
+  description,
+}) => {
   const handleTitleClick = (e: MouseEvent<HTMLDivElement>) => {
-    openModal()
-    setProductDescription(description)
+    openModal();
+    setProductDescription(description);
   };
 
   return (
