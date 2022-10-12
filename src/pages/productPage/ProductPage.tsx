@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useMemo, useState } from "react";
 import products from "../../mocks/products.json";
 import Product from "../../components/Product/Product";
 import { IProduct } from "../../components/Product/product.types";
 import styled from "styled-components";
-import ContainerTextField from "../../components/TextField/ContainerTextField";
+import DebouncedTextField from "../../components/TextField/DebouncedTextField";
 import ProductModal from "../../components/ProductModal/ProductModal";
 
 const Wrapper = styled.div`
@@ -20,18 +20,20 @@ const ProductPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [productDescription, setProductDescription] = useState<string>("");
 
-  const filteredProducts = products.filter(
-    (product: IProduct) =>
-      product.name.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
-      product.sku.toLowerCase().includes(searchValue.trim().toLowerCase())
-  );
+  const filteredProducts = useMemo(() => {
+    return products.filter(
+      (product: IProduct) =>
+        product.name.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
+        product.sku.toLowerCase().includes(searchValue.trim().toLowerCase())
+    );
+  }, [products]);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
   return (
     <Wrapper>
-      <ContainerTextField
+      <DebouncedTextField
         value={searchValue}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           setSearchValue(e.target.value)
