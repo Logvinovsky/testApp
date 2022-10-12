@@ -40,12 +40,10 @@ const Product: FC<IProductProps> = ({
   };
 
   return (
-    <>
       <ProductWrapper>
         <Title onClick={handleTitleClick}>{name}</Title>
         <SkuCode>{sku}</SkuCode>
       </ProductWrapper>
-    </>
   );
 };
 
