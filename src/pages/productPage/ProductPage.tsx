@@ -26,7 +26,7 @@ const ProductPage = () => {
         product.name.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
         product.sku.toLowerCase().includes(searchValue.trim().toLowerCase())
     );
-  }, [products]);
+  }, [products, searchValue]);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
