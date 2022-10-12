@@ -15,9 +15,10 @@ const StyledDialog = styled(Dialog)`
     .MuiPaper-root {
       position: absolute;
       margin: 0;
+      padding: 15px;
 
       width: 500px;
-      height: 300px;
+      height: 200px;
     }
 
     .MuiDialogContent-root {

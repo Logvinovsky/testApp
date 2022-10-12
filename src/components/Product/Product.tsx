@@ -2,7 +2,7 @@ import React, {Dispatch, FC, MouseEvent, SetStateAction} from "react";
 import styled from "styled-components";
 
 interface IProductProps {
-  id: number;
+  id?: number;
   name: string;
   sku: string;
   openModal: () => void;

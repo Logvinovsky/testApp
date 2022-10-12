@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import MaterialUiTextField from "@material-ui/core/TextField";
+import MaterialUiTextField, {TextFieldProps} from "@material-ui/core/TextField";
 import {TOnChange} from "../../utils/types";
 
 interface ITextFieldProps {
@@ -24,7 +24,7 @@ const StyledTextField = styled(MaterialUiTextField)`
   }
 `;
 
-const TextField: FC<ITextFieldProps> = ({
+const TextField: FC<TextFieldProps> = ({
   id,
   placeholder,
   value,
