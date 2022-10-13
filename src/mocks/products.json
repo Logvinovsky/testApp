@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "name": "product1",
+    "title": "Product 1",
     "sku": "AD321EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   },
   {
     "id": 2,
-    "name": "product2",
+    "title": "Product 2",
     "sku": "AD322EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   },
   {
     "id": 3,
-    "name": "product3",
+    "title": "Product 3",
     "sku": "AD323EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   },
   {
     "id": 4,
-    "name": "product4",
+    "title": "Product 4",
     "sku": "AD324EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   },
   {
     "id": 5,
-    "name": "product5",
+    "title": "Product 5",
     "sku": "AD325EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   },
   {
     "id": 6,
-    "name": "product6",
+    "title": "Product 6",
     "sku": "AD326EWQ",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum aliquet risus a consequat. Curabitur laoreet turpis in lobortis ultrices. Etiam vitae sem venenatis, tristique lacus sit amet, gravida est. Fusce gravida lectus eget fringilla imperdiet. Nunc sodales efficitur est, bibendum rutrum leo ultricies vitae. Mauris nec imperdiet ipsum, ultrices congue arcu. Nam tincidunt viverra interdum."
   }

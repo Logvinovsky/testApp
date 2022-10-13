@@ -6,6 +6,11 @@ import styled from "styled-components";
 import DebouncedTextField from "../../components/TextField/DebouncedTextField";
 import ProductModal from "../../components/ProductModal/ProductModal";
 
+export interface IProductModalData {
+  title?: string;
+  description?: string;
+}
+
 const Wrapper = styled.div`
   margin: auto;
   width: 60%;
@@ -18,12 +23,12 @@ const ProductsWrapper = styled.div`
 const ProductPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [productDescription, setProductDescription] = useState<string>("");
+  const [productData, setProductData] = useState<IProductModalData>({});
 
   const filteredProducts = useMemo(() => {
     return products.filter(
       (product: IProduct) =>
-        product.name.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
+        product.title.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
         product.sku.toLowerCase().includes(searchValue.trim().toLowerCase())
     );
   }, [products, searchValue]);
@@ -44,20 +49,19 @@ const ProductPage = () => {
       <ProductsWrapper>
         {filteredProducts.map((product: IProduct) => (
           <Product
-            id={product.id}
-            name={product.name}
+            title={product.title}
             description={product.description}
             sku={product.sku}
             key={product.id}
             openModal={openModal}
-            setProductDescription={setProductDescription}
+            setProductData={setProductData}
           />
         ))}
       </ProductsWrapper>
 
       <ProductModal
         isOpen={modalIsOpen}
-        description={productDescription}
+        data={productData}
         onClose={closeModal}
       />
     </Wrapper>
