@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import TextField from "./TextField";
 import { TOnChange } from "../../utils/types";
 import { useChangeWithDebounce } from "../../hooks/useChangeWithDebounce";
+import { TextField } from "./TextField";
 
 interface IContainerTextFieldProps {
   debounceMsTime?: number;
@@ -11,7 +11,7 @@ interface IContainerTextFieldProps {
   id: string;
 }
 
-const DebouncedTextField: FC<IContainerTextFieldProps> = ({
+export const DebouncedTextField: FC<IContainerTextFieldProps> = ({
   debounceMsTime = 250,
   value: valueFromParent,
   onChange: onChangeFromParent,
@@ -33,5 +33,3 @@ const DebouncedTextField: FC<IContainerTextFieldProps> = ({
     />
   );
 };
-
-export default DebouncedTextField;

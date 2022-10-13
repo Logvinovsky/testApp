@@ -23,7 +23,7 @@ const StyledTextField = styled(MaterialUiTextField)`
   }
 `;
 
-const TextField: FC<TextFieldProps> = ({
+export const TextField: FC<TextFieldProps> = ({
   id,
   placeholder,
   value,
@@ -39,5 +39,3 @@ const TextField: FC<TextFieldProps> = ({
     />
   );
 };
-
-export default TextField;

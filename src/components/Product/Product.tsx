@@ -27,7 +27,7 @@ const Title = styled.div`
 `;
 const SkuCode = styled.div``;
 
-const Product: FC<IProductProps> = ({
+export const Product: FC<IProductProps> = ({
   title,
   sku,
   openModal,
@@ -46,5 +46,3 @@ const Product: FC<IProductProps> = ({
       </ProductWrapper>
   );
 };
-
-export default Product;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { PATH } from "./routes/paths";
-import ProductPage from "./pages/productPage/ProductPage";
+import { ProductPage } from "./pages/productPage/ProductPage";
 
 function App() {
   return (

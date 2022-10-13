@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
-import Product from "../../components/Product/Product";
+import { Product } from "../../components/Product/Product";
 import { IProduct } from "../../components/Product/product.types";
 import styled from "styled-components";
-import DebouncedTextField from "../../components/TextField/DebouncedTextField";
-import ProductModal from "../../components/ProductModal/ProductModal";
+import { DebouncedTextField } from "../../components/TextField/DebouncedTextField";
+import { ProductModal } from "../../components/ProductModal/ProductModal";
 import { getProducts } from "../../utils/helpers";
 import { Loader } from "../../components/Loader/Loader";
 
@@ -24,7 +24,7 @@ const ProductsWrapper = styled.div`
   gap: 15px;
 `;
 
-const ProductPage = () => {
+export const ProductPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [productData, setProductData] = useState<IProductModalData>({});
@@ -87,5 +87,3 @@ const ProductPage = () => {
     </Wrapper>
   );
 };
-
-export default ProductPage;

@@ -45,7 +45,7 @@ const Description = styled.div`
   margin-top: 10px;
 `;
 
-const ProductModal: FC<IProductModalProps> = ({ isOpen, data, onClose }) => {
+export const ProductModal: FC<IProductModalProps> = ({ isOpen, data, onClose }) => {
   const { title, description } = data;
 
   return (
@@ -58,4 +58,3 @@ const ProductModal: FC<IProductModalProps> = ({ isOpen, data, onClose }) => {
   );
 };
 
-export default ProductModal;
