@@ -18,6 +18,9 @@ const Wrapper = styled.div`
 
 const ProductsWrapper = styled.div`
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 `;
 
 const ProductPage = () => {
@@ -28,7 +31,9 @@ const ProductPage = () => {
   const filteredProducts = useMemo(() => {
     return products.filter(
       (product: IProduct) =>
-        product.title.toLowerCase().includes(searchValue.trim().toLowerCase()) ||
+        product.title
+          .toLowerCase()
+          .includes(searchValue.trim().toLowerCase()) ||
         product.sku.toLowerCase().includes(searchValue.trim().toLowerCase())
     );
   }, [products, searchValue]);

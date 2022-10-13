@@ -11,11 +11,12 @@ interface IProductProps {
 }
 
 const ProductWrapper = styled.div`
-  width: 100%;
   padding: 15px;
   border: 1px solid lightblue;
   display: flex;
   justify-content: space-between;
+  border-radius: 4px;
+  box-shadow: 5px 10px 5px rgba(0, 192, 255, 0.15);
 `;
 
 const Title = styled.div`

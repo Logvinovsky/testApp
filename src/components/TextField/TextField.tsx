@@ -1,17 +1,16 @@
 import { FC } from "react";
 import styled from "styled-components";
-import MaterialUiTextField, {TextFieldProps} from "@material-ui/core/TextField";
-import {TOnChange} from "../../utils/types";
-
-interface ITextFieldProps {
-  id: string;
-  placeholder: string;
-  value: string;
-  onChange: TOnChange;
-}
+import MaterialUiTextField, {
+  TextFieldProps,
+} from "@material-ui/core/TextField";
 
 const StyledTextField = styled(MaterialUiTextField)`
-  width: 300px;
+  width: 100%;
+
+  .MuiInputBase-input {
+    padding: 15px;
+  }
+
   .MuiOutlinedInput-root {
     & input::placeholder {
       color: grey;
