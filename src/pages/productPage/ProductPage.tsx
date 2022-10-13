@@ -1,10 +1,11 @@
-import React, { ChangeEvent, useMemo, useState } from "react";
-import products from "../../mocks/products.json";
+import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
 import Product from "../../components/Product/Product";
 import { IProduct } from "../../components/Product/product.types";
 import styled from "styled-components";
 import DebouncedTextField from "../../components/TextField/DebouncedTextField";
 import ProductModal from "../../components/ProductModal/ProductModal";
+import { getProducts } from "../../utils/helpers";
+import { Loader } from "../../components/Loader/Loader";
 
 export interface IProductModalData {
   title?: string;
@@ -27,6 +28,15 @@ const ProductPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [productData, setProductData] = useState<IProductModalData>({});
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    getProducts().then((products: IProduct[]) => {
+      setIsLoading(false);
+      setProducts(products);
+    });
+  }, []);
 
   const filteredProducts = useMemo(() => {
     return products.filter(
@@ -51,17 +61,22 @@ const ProductPage = () => {
         placeholder={"Search..."}
         id={"searchbar"}
       />
+
       <ProductsWrapper>
-        {filteredProducts.map((product: IProduct) => (
-          <Product
-            title={product.title}
-            description={product.description}
-            sku={product.sku}
-            key={product.id}
-            openModal={openModal}
-            setProductData={setProductData}
-          />
-        ))}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          filteredProducts.map((product: IProduct) => (
+            <Product
+              title={product.title}
+              description={product.description}
+              sku={product.sku}
+              key={product.id}
+              openModal={openModal}
+              setProductData={setProductData}
+            />
+          ))
+        )}
       </ProductsWrapper>
 
       <ProductModal
